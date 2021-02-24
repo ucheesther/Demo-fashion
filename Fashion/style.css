@@ -1,49 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-#main{
-    width: 100%;
-    height: 100vh;
-    background-image: url(images/fas.jpg);
-    background-size: cover;
-}
-
-nav{
-    width: 100%;
-    height: 80px;
-    background-color: #0001;
-    line-height: 80px;
-}
-
-/* nav a{
-   margin-top: 100px;
-} */
-
-nav ul{
-    float: right;
-    margin-right: 30px;
-}
-
-nav ul li{
-    list-style-type: none;
-    display: inline-block;
-    transition: 0.8s all;
-}
-
-nav ul li:hover{
-    background-color: black;
-}
-nav ul li a{
-    text-decoration: none;
-    color: #fff;
-    padding: 30px;
-}
-
 h1{
-    color:whitesmoke;
+    color:white;
     /* font-family: fantasy; */
     /* font-weight: 700; */
 }
@@ -53,17 +9,58 @@ a{
 }
 
 .container{
-   padding: 200px; 
+   /* padding: 200px;  */
+   margin:100px 100px;
     display:flex;
     align-items: center;
     justify-content: center;
 }
+
+#head {
+    color: tomato;
+    font-weight: 500;
+}
+
 
 #body h1{
 display: block;
 width: fit-content;
 font-size: 4rem;
 position: relative;
+animation: tex_reveal .5s ease forwards;
+animation-delay: 1s;
+}
+
+#body h1:nth-child(1){
+    animation-delay: 1s;
+}
+#body h1:nth-child(2){
+    animation-delay: 2s;
+}
+#body h1:nth-child(3){
+    animation-delay: 3s;
+}
+
+
+#body h1 span{
+ position: absolute;  
+ top: 0; 
+ left: 0;
+ height: 100%;
+ width: 0;
+ background-color: tomato;
+ animation: text_reveal_box 1s ease;
+ animation-delay: .5s;
+}
+
+#body h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#body h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#body h1:nth-child(3) span{
+    animation-delay: 2.5s;
 }
 
 #body .btn{
@@ -71,16 +68,90 @@ position: relative;
     padding: 10px 30px;
     color:white;
     background-color: transparent;
-    border: 2px solid tomato;
+    border: 2px solid rgb(185, 139, 131);
+    border-radius: 30px;
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 1rem;
     margin-top: 30px;
     transition: 3s ease;
     transition-property: background-color, color;
+    
 }
 
 #body .btn:hover{
     color: white;
     background-color: tomato;
+    border-radius: 30px;
 }
+
+/* .toggle-button{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display:none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar{
+    height: 3px;
+    width: 100px;
+    background-color: white;
+    border-radius: 10px;
+} */
+
+/* @media(max-width: 600px) {
+    .toggle-button {
+        display: flex;
+
+    }
+}
+ */
+
+ @keyframes text_reveal_box{
+     50%{
+         width: 100%;
+         left: 0;
+     }
+     100% {
+         width: 0;
+         left: 100%;
+     }
+ }
+
+ @keyframes text_reveal{
+     100%{
+        color: white;
+     }
+ }
+
+ .foot{
+    width: 80%;
+    margin: 0 auto; 
+    text-align:right ;/* Center the DIV horizontally */
+  }
+  .fixed-header, .fixed-footer{
+    width: 100%;
+    position: fixed;        
+    background:transparent;
+    padding: 10px 0;
+    color:black;
+    font-weight: 900;
+  }
+  .fixed-header{
+    top: 0;
+  }
+  .fixed-footer{
+    bottom: 0;
+  }
+  
+  .social{
+      margin-right: 50px;
+  }
+
+  @media screen and (max-width: 600px) {
+    
+    }
